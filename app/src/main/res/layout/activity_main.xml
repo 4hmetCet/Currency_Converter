@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tutorial.currencyconverter.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/usdText"
+        android:layout_width="198dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="USD:"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/inpDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/inpDecimal" />
+
+    <TextView
+        android:id="@+id/tryText"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="TRY:"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/usdText"
+        app:layout_constraintStart_toStartOf="@+id/eurText"
+        app:layout_constraintTop_toBottomOf="@+id/eurText" />
+
+    <Button
+        android:id="@+id/getRatesBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_marginTop="72dp"
+        android:onClick="getRates"
+        android:text="Calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+
+    <TextView
+        android:id="@+id/eurText"
+        android:layout_width="146dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="EUR:"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textColorHighlight="?attr/colorButtonNormal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inpDecimal"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="bottom"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eurText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inpText"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="bottom"
+        android:inputType="textPersonName"
+        android:maxLength="3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/inputText"
+        app:layout_constraintEnd_toStartOf="@+id/inputText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tryText"
+        app:layout_constraintTop_toBottomOf="@+id/tryText" />
+
+    <TextView
+        android:id="@+id/inputText"
+        android:layout_width="300dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="Enter Currency"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/usdText"
+        app:layout_constraintStart_toEndOf="@+id/inpText"
+        app:layout_constraintTop_toBottomOf="@+id/usdText" />
+
+    <TextView
+        android:id="@+id/budgetText"
+        android:layout_width="99dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getRatesBtn" />
+
+    <Button
+        android:id="@+id/Sellbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/holo_red_dark"
+        android:onClick="sell"
+        android:text="SELL"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Buybutton"
+        app:layout_constraintStart_toStartOf="@+id/inpText"
+        app:layout_constraintTop_toBottomOf="@+id/budgetText" />
+
+    <Button
+        android:id="@+id/Buybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/holo_green_light"
+        android:onClick="buy"
+        android:text="BUY"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/inputText"
+        app:layout_constraintTop_toBottomOf="@+id/budgetText" />
+
+    <Button
+        android:id="@+id/Restartbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="restart"
+        android:text="RESTART"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budgetText" />
+
+</android.support.constraint.ConstraintLayout>
